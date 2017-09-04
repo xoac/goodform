@@ -84,3 +84,6 @@ else
   // Handle error.
 }
 ```
+
+# Limitations:
+- complex keys are out of scope with this library (key can be only strings in msgpack)
