@@ -19,6 +19,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 set(SOURCE_FILES
+  src/form.cpp
   src/variant.cpp
   src/msgpack.cpp
   src/json.cpp)
