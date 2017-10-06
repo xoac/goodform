@@ -11,7 +11,7 @@
 #include <cmath>
 
 
-int main(int argc [[maybe_unused]], char** argv [[maybe_unused]])
+int main(int argc __attribute__((unused)), char** argv __attribute__((unused)))
 {
   {
     bool passed = false;
@@ -85,12 +85,10 @@ int main(int argc [[maybe_unused]], char** argv [[maybe_unused]])
     form_data.password_hash = form.at("password_hash").string().match(std::regex("^[a-fA-F0-9]{32}$")).val();
     form_data.subscribe_to_email_marketing = form.at("subscribe_to_email_marketing", true).boolean().val(); // Optional field defaults to true.
 
-    form.at("interests").array().for_each([&form_data](goodform::sub_form& sf, std::size_t i)
+    form.at("interests").array().for_each([&form_data](goodform::sub_form& sf, std::size_t i __attribute__((unused)))
     {
       form_data.interests.push_back(sf.string().val());
     });
-
-
 
 
     if (form.is_good())

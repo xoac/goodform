@@ -114,7 +114,7 @@ namespace goodform
     //----------------------------------------------------------------------//
 
     //----------------------------------------------------------------------//
-    variant& operator=(std::nullptr_t value [[maybe_unused]]);
+    variant& operator=(std::nullptr_t value __attribute__((unused)));
     variant& operator=(bool value);
 
     variant& operator=(std::int8_t value);
