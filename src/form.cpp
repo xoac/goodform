@@ -501,6 +501,12 @@ namespace goodform
   {
     return this->error_.empty();
   }
+  
+  std::string form::what() const
+  {
+    return this->error_.message();
+  }
+  
   //======================================================================//
 }  //namespace goodform
 //######################################################################//

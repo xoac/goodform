@@ -17,7 +17,7 @@ namespace goodform
   public:
     error_message(const std::string& message) { this->message_ = message; }
     bool empty() const { return this->message_.empty(); }
-    const std::string& message() const; // { return this->message_; }
+    const std::string& message() const { return this->message_; }
   };
 
   //======================================================================//
@@ -115,7 +115,7 @@ namespace goodform
   class array_validator
   {
   private:
-    const std::vector<variant>& value_;
+    const array& value_;
     error_message& error_;
   public:
     array_validator(const std::vector<variant>& value, error_message& error_message);
@@ -458,6 +458,7 @@ namespace goodform
   public:
     form(const variant& v);
     bool is_good() const;
+    std::string what() const;
   };
   //======================================================================//
 
